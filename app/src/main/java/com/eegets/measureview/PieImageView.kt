@@ -23,7 +23,7 @@ class PieImageView @JvmOverloads constructor(
     private var progress: Int = 0
     private val MAX_PROGRESS: Int = 100
     private var arcPaint: Paint? = null
-    private var circlePaint : Paint? = null
+    private var circlePaint: Paint? = null
     private var bound: RectF? = RectF()
 
     fun setProgress(progress: Int) {
@@ -34,7 +34,7 @@ class PieImageView @JvmOverloads constructor(
     init {
         arcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         arcPaint?.style = Paint.Style.FILL_AND_STROKE
-        arcPaint?.strokeWidth =  dpToPixel(0.1f, context)
+        arcPaint?.strokeWidth = dpToPixel(0.1f, context)
         arcPaint?.color = Color.RED
 
         circlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -74,6 +74,10 @@ class PieImageView @JvmOverloads constructor(
         //宽度测量模式
         val widthMode = MeasureSpec.getMode(widthMeasureSpec)
         val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+        Log.d(
+            "TAG",
+            "MeasureSpecMode MeasureSpec.AT_MOST = ${MeasureSpec.AT_MOST}, MeasureSpec.EXACTLY = ${MeasureSpec.EXACTLY}, MeasureSpec.UNSPECIFIED = ${MeasureSpec.UNSPECIFIED}"
+        )
 
         Log.d(
             "TAG",
@@ -97,10 +101,23 @@ class PieImageView @JvmOverloads constructor(
                 "onMeasure +++++ measuredWidth = $size, measureHeight = $size"
             )
         } else { //如果不是wrap_content则还是使用父布局的实现方式
-            setMeasuredDimension(getDefaultSize(suggestedMinimumWidth, widthMeasureSpec), getDefaultSize(suggestedMinimumHeight, heightMeasureSpec))
+            setMeasuredDimension(
+                getDefaultSize(suggestedMinimumWidth, widthMeasureSpec),
+                getDefaultSize(suggestedMinimumHeight, heightMeasureSpec)
+            )
             Log.d(
                 "TAG",
-                "onMeasure ----- defaultMeasuredWidth = ${getDefaultSize(suggestedMinimumWidth, widthMeasureSpec)}, defaultMeasuredHeight = ${getDefaultSize(suggestedMinimumHeight, heightMeasureSpec)}"
+                "onMeasure ----- defaultMeasuredWidth = ${
+                    getDefaultSize(
+                        suggestedMinimumWidth,
+                        widthMeasureSpec
+                    )
+                }, defaultMeasuredHeight = ${
+                    getDefaultSize(
+                        suggestedMinimumHeight,
+                        heightMeasureSpec
+                    )
+                }"
             )
         }
     }

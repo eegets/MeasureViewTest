@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_flow.*
  */
 class FlowActivity :Activity() {
 
-    private val list = mutableListOf("阿迪达斯", "李林", "耐克", "361", "海蓝之迷面霜", "coach", "fendi", "亚历山大短靴", "二手中古", "Ariete阿丽亚特", "ASH", "阿玛尼牛仔")
+    private val list = mutableListOf("阿迪达斯", "李林", "耐克", "361", "海蓝之迷面霜海蓝之迷面霜海蓝之迷面霜海蓝之迷面霜海蓝之迷面霜海蓝之迷面霜海蓝之迷面霜", "coach", "fendi", "亚历山大短靴", "二手中古", "Ariete阿丽亚特", "ASH", "阿玛尼牛仔")
 //    private val list = mutableListOf("阿迪达斯", "李林", "耐克", "361", "海蓝之迷面霜", "coach", "fendi", "亚历山大短靴")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

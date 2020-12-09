@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         pieImageView.setProgress(45)
 
+        pieImageView.doOnClick {
+
+        }
+
 //        pieImageView.postDelayed({
 //            val params = pieImageView.layoutParams
 //            params.width = dpToPixel(200f, this).toInt()
@@ -21,5 +26,11 @@ class MainActivity : AppCompatActivity() {
 //            pieImageView.layoutParams = params
 //
 //        }, 1000)
+    }
+
+    inline fun View.doOnClick(crossinline action: (View) -> Unit) {
+        this.setOnClickListener {
+            action.invoke(it)
+        }
     }
 }

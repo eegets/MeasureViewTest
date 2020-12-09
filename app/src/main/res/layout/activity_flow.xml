@@ -4,5 +4,8 @@
     android:layout_height="wrap_content"
     android:id="@+id/flowLayout"
     android:background="#bbbbbb">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="sssssssssssss"/>
 </com.eegets.measureview.FlowLayout>
